@@ -1,0 +1,15 @@
+name: 'Hello My World'
+description: 'Greet someone and record the docker action'
+inputs:
+  who-to-greet:  # id of input
+    description: 'Why greet'
+    required: true
+    default: 'World'
+outputs:
+  time: # id of output
+    description: 'Greeting you'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.who-to-greet }}
